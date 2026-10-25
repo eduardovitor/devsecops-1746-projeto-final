@@ -1,8 +1,8 @@
 # Relatório Teórico Complementar - Clube Aurora (Trilha 2 — Mista)
 
-**Nome do Aluno(a):** [Seu Nome Aqui]  
+**Nome do Aluno(a):** Eduardo Vitor Vieira Torres  
 **Turma:** DevSecOps 1746  
-**Data:** [Data de Entrega]
+**Data:** 26/10/2026
 
 ---
 
@@ -12,10 +12,11 @@ Preencha a matriz de análise para os 4 achados conceituais da Trilha 2 (Mista):
 
 | Achado | Componente / Arquivo | Categoria STRIDE | Pilar CIA Afetado | Impacto no Negócio do Clube Aurora |
 |---|---|---|---|---|
-| **F3: SQL Injection** | `app/db.py` (`search_clients`) | | | |
-| **F5: Ausência de Headers HTTP** | `app/main.py` e `app/__init__.py` | | | |
-| **F6: Quebra de Menor Privilégio** | `app/db.py` / `app/main.py` | | | |
-| **F7: IaC Permissiva (Docker Compose)** | `docker-compose.yml` | | | |
+| **F3: SQL Injection** | `app/db.py` (`search_clients`) | Elevation of Privilege | Todos | Risco de vazamento de dados, adulteração indevida de informações e até mesmo tentativas de negação de serviço com consultas não-performáticas|
+| **F5: Ausência de Headers HTTP** | `app/main.py` e `app/__init__.py` | Information Disclosure | Confidencialidade e Integridade| Má configuração de segurança pode ocasionar alguns tipos de ataque, como alteração indevida de dados, vazamento de informações, etc|
+| **F6: Quebra de Menor Privilégio** | `app/db.py` / `app/main.py` | Elevation of Privilege | Todos | Quebra do privilégio mínimo é um risco gigantesco para qualquer organização, tendo em vista que pode causar todos os tipos de ameaças/problemas do STRIDE|
+| **F7: IaC Permissiva (Docker Compose)** | `docker-compose.yml` | Elevation of Privilege | Todos | Imagens Docker permissivas anulam o isolamento do sistema e maximizam os riscos do STRIDE. Elas permitem a Fuga de Contêiner (Elevação de Privilégio), a adulteração de arquivos do host e o vazamento de dados sensíveis. Tal problema também facilita ataques de DOS, enquanto o uso do usuário root possibilita falsificações e apaga rastros (repúdio).
+ |
 
 ---
 
