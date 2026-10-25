@@ -46,3 +46,11 @@ Respostas
 Caso uma conta de funcionário seja comprometida ou ocorram tentativas de força bruta na API:
 1. Quais eventos mínimos devem ser registrados no log de auditoria (`audit_log`)?
 2. Como a equipe de operações saberia que um ataque de SQL Injection ou login malicioso está ocorrendo em tempo hábil?
+
+Respostas
+
+1) Nessa situação, os logs de auditoria devem registrar autenticações bem-sucedidas e malsucedidas, logout e tentativas suspeitas de acesso. Os registros deverão conter data, hora, usuário, origem, ação e resultado. Analogamente, é interessante monitorar atividades administrativas, como criação, alteração e exclusão de contas. Por fim, recomenda-se verificar eventos de segurança, como incidentes, falhas e alertas em sistemas como o SIEM.
+
+<br>
+
+2) A detecção desses tipos de ataques ocorre a partir de comportamentos incomuns que ocorrem em algum sistema. Tais comportamentos geram alertas de segurança por meio de sistemas como os SIEMs. Após a detecção, a equipe de segurança investiga se os alertas gerados representam um ataque real ou não.
